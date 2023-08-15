@@ -6,12 +6,6 @@ if [ -z "$PYFILE" ]; then
     exit 1
 fi
 
-# Check if the specified Python file exists
-if [ ! -f "$PYFILE" ]; then
-    echo "Error: Python file '$PYFILE' not found."
-    exit 1
-fi
-
-# Run the Python script
+# Run the Python script using the provided PYFILE
 python3 "$PYFILE"
 
