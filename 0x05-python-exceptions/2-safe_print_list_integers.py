@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-def safe_print_list_integers(my_list=[], x=0):
+def safe_print_list_integers(my_list=None, x=0):
+    if my_list is None:
+        my_list = []
+
     count = 0
-    for item in my_list:
+    for i in range(x):
         try:
-            print("{:d}".format(item), end=" ")
+            print("{:d}".format(my_list[i]), end="")
             count += 1
-        except (ValueError, TypeError):
-            pass  # Skip non-integer values silently
-
-        if count >= x:
-            break
-
-    print()  # Print a new line after printing the integers
+        except (TypeError, ValueError):
+            pass
+    print()
     return count
 
